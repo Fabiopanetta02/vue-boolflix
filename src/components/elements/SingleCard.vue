@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h4>{{info.title}}</h4>
-    <h5>{{info.original_title}}</h5>
+    <h4>{{info.title || info.name}}</h4>
+    <h5>{{info.original_title || info.original_name}}</h5>
     <lang-flag :iso="`${info.original_language}`"/>
     <p>{{info.vote_average}}</p>
   </div>
