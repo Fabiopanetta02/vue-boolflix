@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TheHeader />
-    <BaseMain />
+    <TheHeader @search="searching"/>
+    <BaseMain :films="films"/>
     <TheFooter />
   </div>
 </template>
@@ -11,13 +11,38 @@ import TheHeader from './components/macro/TheHeader.vue'
 import BaseMain from './components/macro/BaseMain.vue'
 import TheFooter from './components/macro/TheFooter.vue'
 
+import axios from 'axios';
+
 export default {
   name: 'App',
   components: {
     TheHeader,
     BaseMain,
     TheFooter,
-}
+  },
+  data(){
+    return{
+      films: []
+    }
+  },
+  methods: {
+    searching(payload){
+      axios.get("https://api.themoviedb.org/3/search/movie", {
+        params: {
+          api_key: "869adbdd8dc3114da19f19c812dbedb9",
+          query: payload,
+          language: "it-IT"
+        }
+      })
+      .then((response) => {
+        //console.log(response.data.results);
+        this.films = response.data.results;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+  }
 }
 </script>
 

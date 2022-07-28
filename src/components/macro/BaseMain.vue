@@ -1,10 +1,20 @@
 <template>
-  <div></div>
+  <div>
+    <FilmsList :films="films"/>
+  </div>
 </template>
 
 <script>
+import FilmsList from '../sections/FilmsList.vue';
+
 export default {
-    name: 'BaseMain'
+    name: 'BaseMain',
+    components: {
+      FilmsList
+    },
+    props: {
+      films: Array
+    }
 }
 </script>
 
