@@ -11,6 +11,8 @@ import TheHeader from './components/macro/TheHeader.vue'
 import BaseMain from './components/macro/BaseMain.vue'
 import TheFooter from './components/macro/TheFooter.vue'
 
+import "./assets/scss/generics.scss"
+
 import axios from 'axios';
 
 export default {

@@ -8,7 +8,19 @@
       <img v-if="flags.includes(info.original_language)" :src="require(`../../assets/img/${info.original_language}.png`)" :alt="info.original_language">
       <img v-else src="../../assets/img/none.png" alt="Flag not available">
     </div>
-    <div>{{info.vote_average}}</div>
+      <div class="ratings">
+        <div class="grey-stars">
+          <div v-for="rating in 5" :key="rating">
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <div class="yellow-stars">
+          <div v-for="stars in starRating" :key="stars">
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -28,11 +40,17 @@ export default {
           "it"
         ]
       }
+    },
+    computed: {
+      starRating() {
+        return Math.ceil(this.info.vote_average / 2);
+      }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/vars';
 .default-img{
   width: 342px;
   height: 513px;
@@ -41,6 +59,26 @@ export default {
 .flags {
     img {
       width: 50px;
+      margin-bottom: 10px;
     }
-  }
+}
+
+.ratings {
+    display: flex;
+    position: relative;
+    .grey-stars {
+      display: flex;
+      color: $text-grey;
+      font-size: 20px;
+    }
+    .yellow-stars {
+      display: flex;
+      position: absolute;
+      font-size: 20px;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      color: $text-yellow;
+    }
+}
 </style>
