@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheHeader @search="searching"/>
-    <BaseMain :films="films"/>
+    <BaseMain :films="films" :series="series"/>
     <TheFooter />
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
   },
   data(){
     return{
-      films: []
+      films: [],
+      series: []
     }
   },
   methods: {

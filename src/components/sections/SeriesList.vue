@@ -1,7 +1,7 @@
 <template>
   <div>
       <h2>Series List</h2>
-      <ul>
+      <ul class="list-style-type-none">
           <li v-for="(serie, index) in series" :key="index">
               <SingleCard :info="serie"/>
           </li>
