@@ -35,7 +35,7 @@ export default {
         }
       })
       .then((response) => {
-        //console.log(response.data.results);
+        console.log(response.data.results);
         this.films = response.data.results;
       })
       .catch((error) => {
