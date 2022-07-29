@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h2>Movies List</h2>
-      <ul>
-          <li v-for="(film, index) in films" :key="index">
+  <div class="container">
+    <h2>Film</h2>
+      <ul class="d-flex">
+          <li v-for="(film, index) in films" :key="index" class="item">
               <SingleCard :info="film"/>
           </li>
       </ul>
@@ -23,4 +23,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/vars';
+h2{
+    color: #fff;
+    padding: 20px;
+}
+.item {
+    width: calc(100% / 4);
+    color: $text-white;
+    padding: 10px 20px;
+}
 </style>

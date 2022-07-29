@@ -1,8 +1,8 @@
 <template>
-  <div>
-      <h2>Series List</h2>
+  <div class="container">
+      <h2>Serie TV</h2>
       <ul class="list-style-type-none">
-          <li v-for="(serie, index) in series" :key="index">
+          <li v-for="(serie, index) in series" :key="index" class="item">
               <SingleCard :info="serie"/>
           </li>
       </ul>
@@ -23,4 +23,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/scss/vars';
+h2{
+    color: #fff;
+    padding: 20px;
+}
+.item {
+    width: calc(100% / 4);
+    color: $text-white;
+    padding: 10px 20px;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <FilmsList :films="films"/>
     <SeriesList :series="series"/>
   </div>
@@ -23,4 +23,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main {
+  height: calc(100vh - 100px);
+  background-image: url(../../assets/img/boolflix-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+}
 </style>
