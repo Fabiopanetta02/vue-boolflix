@@ -1,7 +1,11 @@
 <template>
   <div>
-    <TheHeader @search="searching"/>
-    <BaseMain :films="films" :series="series"/>
+    <header>
+      <TheHeader @search="searching"/>
+    </header>
+    <main>
+      <BaseMain :films="films" :series="series"/>
+    </main>
     <TheFooter />
   </div>
 </template>

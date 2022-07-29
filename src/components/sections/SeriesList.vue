@@ -1,12 +1,14 @@
 <template>
-  <div class="container">
+<section id="series">
+    <div class="container">
       <h2>Serie TV</h2>
       <ul class="list-style-type-none">
           <li v-for="(serie, index) in series" :key="index" class="item">
               <SingleCard :info="serie"/>
           </li>
       </ul>
-  </div>
+    </div>
+</section>
 </template>
 
 <script>
@@ -24,14 +26,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/scss/vars';
-h2{
+#series{
+    margin: 20px 0px;
+
+    h2{
     color: #fff;
     padding: 20px;
-}
-.item {
+    }
+    .item {
     width: calc(100% / 4);
     color: $text-white;
     padding: 10px 20px;
+    }
 }
-
 </style>

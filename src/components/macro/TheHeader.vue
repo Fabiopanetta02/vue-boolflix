@@ -1,25 +1,19 @@
 <template>
   <div class="header">
-    <!-- logo -->
-    <div class="logo">
-      <img src="../../assets/img/boolflix.png" alt="The Boolflix logo">
+    <div class="container">
+      <div class="navbar">
+        <!-- logo -->
+        <div class="logo">
+          <img src="../../assets/img/boolflix.png" alt="The Boolflix logo">
+        </div>
+
+        <!-- searchbox -->
+        <form @submit.prevent="$emit('search', searchText)">
+            <input type="text" placeholder="Titolo film o serie TV" v-model.trim="searchText" class="input">
+            <button class="button">Cerca</button>
+        </form>
+      </div>
     </div>
-
-    <!-- navbar -->
-    <ul class="navabar">
-      <li>Home</li>
-      <li>Serie TV</li>
-      <li>Film</li>
-      <li>Nuovi e popolari</li>
-      <li>La mia lista</li>
-      <li>Audio e sottotitoli</li>
-    </ul>
-
-    <!-- searchbox -->
-    <form @submit.prevent="$emit('search', searchText)">
-        <input type="text" placeholder="Titolo film o serie TV" v-model="searchText" class="input">
-        <button class="button">Cerca</button>
-    </form>
   </div>
 </template>
 
@@ -37,7 +31,15 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/scss/style.scss';
 @import '../../assets/scss/vars.scss';
-
+.container{
+  height: 100%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
 img {
   height: 50px;
 }

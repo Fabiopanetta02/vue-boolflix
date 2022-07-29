@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+<section id="film">
+    <div class="container">
     <h2>Film</h2>
       <ul class="d-flex">
           <li v-for="(film, index) in films" :key="index" class="item">
@@ -7,6 +8,7 @@
           </li>
       </ul>
   </div>
+</section>
 </template>
 
 <script>
@@ -24,13 +26,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/scss/vars';
-h2{
+#film{
+    margin: 20px 0px;
+
+    h2{
     color: #fff;
     padding: 20px;
-}
-.item {
+    }
+    .item {
     width: calc(100% / 4);
     color: $text-white;
     padding: 10px 20px;
+    }
 }
 </style>
